@@ -1,7 +1,8 @@
-FROM jenkins/jenkins:lts
+FROM ubuntu:16.04
 
-RUN
+RUN apt-get -y update
+RUN apt-get -y install apache2
 
-CMD
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
 
-EXPOSE
+EXPOSE 80
